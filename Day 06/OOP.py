@@ -1,49 +1,65 @@
-import math 
-class calculator:
-    def __init__(self,num_1,num_2):
-        self.num_1 = num_1
-        self.num_2 = num_2
+class Calculator:
+    def Addition (self,a,b):
+        return a+b
+    def Subtraction (self,a,b):
+        return a-b
+    def Multiplication (self,a,b):
+        return a*b
+    def Division (self,a,b):
+        return a/b
+    def SquareRoot (self,a):
+        return a**(1/2)
+    def CircumferenceOfCircle (self,a):
+        return 2*(22/7)*a
 
-    def addition(self):
-        return self.num_1 + self.num_2
-    
-    def substraction(self):
-        return self.num_1 - self.num_2
+class Calsi:
+    def CompoundInterest (self,p,r,t):
+        return (p*(1+(r/100))**t)-p
 
-    def multiplication(self):
-        return self.num_1 * self.num_2
-
-    def divide(self):
-        return self.num_1/self.num_2
-
-    def square_root(self):
-        return math.sqrt(self.num_1)
-
-a = int(input("Enter the first number: "))
-b = int(input("Enter the second number: "))
-
-sol = calculator(a, b)
-choice=1
-while choice!=0:
+val1=Calculator()
+val2=Calsi()
+print("Welcome To The Calculator")
+Choice = 1
+while Choice!=0:
+    print("Choose from the option given below")
     print("0. Exit")
-    print("1. Add")
+    print("1. Addition")
     print("2. Subtraction")
     print("3. Multiplication")
     print("4. Division")
-    print("5. Square_root")
-    choice=int(input("Enter choice: "))
-    if choice==1:
-        print("Result: ",sol.addition())
-    elif choice==2:
-        print("Result: ",sol.substraction())
-    elif choice==3:
-        print("Result: ",sol.multiplication())
-    elif choice==4:
-        print("Result: ",round(sol.divide(),2))
-    elif choice==5:
-        print("Result: ",sol.square_root())
-    elif choice==0:
-        print("Exiting!")
+    print("5. Square Root")
+    print("6. Compound Interest")
+    print("7. Circumference Of Circle")
+    c=int(input("Enter You'r Choice here: "))
+
+    if c==0:
+        print("Exited")
+    elif c==1:
+        a=int(input("Enter 1st No. here:"))
+        b=int(input("Enter 2st No. here:"))
+        print("Result",val1.Addition(a,b))
+    elif c==2:
+        a=int(input("Enter 1st No. here:"))
+        b=int(input("Enter 2st No. here:"))
+        print("Result",val1.Subtraction(a,b))
+    elif c==3:
+        a=int(input("Enter 1st No. here:"))
+        b=int(input("Enter 2st No. here:"))
+        print("Result",val1.Multiplication(a,b))
+    elif c==4:
+        a=int(input("Enter 1st No. here:"))
+        b=int(input("Enter 2st No. here:"))
+        print("Result",val1.Division(a,b))
+    elif c==5:
+        a=int(input("Enter No. here:"))
+        print("Result",val1.SquareRoot(a))
+    elif c==6:
+        p=int(input("Enter Initial Principal here:"))
+        r=int(input("Enter Rate of Interest here:"))
+        t=int(input("Enter no. Time Periods(in Year):"))
+        print("Result",val2.CompoundInterest(p,r,t))
+    elif c==7:
+        a=int(input("Enter Radius here:"))
+        print("Result:",val1.CircumferenceOfCircle(a))
     else:
-        print("Invalid choice!!")
-print()
+        print("Invalid value!!")

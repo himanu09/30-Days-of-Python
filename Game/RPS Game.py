@@ -20,7 +20,7 @@ def Mygame(computer,you):
             print("You Lose!")
 
 computer=random.randint(1,3)
-print("Computer Turn: Choose one from it Rock(r), Paper(p), Scissor(s):")
+print("Computer Turn: Choose one from it Rock(r), Paper(p), Scissor(s) \nComputer has chosen !")
 you=input("You'r Turn: Choose one from it Rock(r), Paper(p), Scissor(s):")
 if computer==1:
     computer="r"
